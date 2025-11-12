@@ -1,33 +1,83 @@
 ---
+const title = 'LockHabit Journal';
+const dek = 'A bright, premium space to understand money—no hype, no jargon. Clear steps you can take today.';
 ---
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>LockHabit Blog — Coming Soon</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={dek} />
+    <link rel="icon" href="/favicon.ico" />
     <style>
-      body {
-        font-family: system-ui, sans-serif;
-        background: #f8fafc;
-        color: #1e293b;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
+      :root { --ink:#0b1020; --soft:#f6f7fb; --brand:#1f3bff; }
+      * { box-sizing:border-box; }
+      body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:var(--ink); background:linear-gradient(180deg,#fff 0%, #f9fbff 100%); }
+      .wrap { max-width:1120px; margin:0 auto; padding:24px 20px 56px; }
+      header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+      .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px; }
+      .badge { width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,#7cf 0%, #9f7bff 100%); }
+      nav a { text-decoration:none; color:var(--ink); font-weight:600; margin-left:16px; opacity:.8 }
+      nav a:hover { opacity:1 }
+      .hero { margin-top:28px; background:#fff; border-radius:18px; box-shadow:0 8px 32px rgba(10,35,95,.08); padding:28px; }
+      h1 { font-size:34px; line-height:1.14; margin:0 0 12px; letter-spacing:.2px; }
+      p.lead { font-size:18px; opacity:.85; margin:0 0 20px }
+      .pills { display:flex; flex-wrap:wrap; gap:12px; margin:18px 0 6px }
+      .pill { display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:999px; background:#f2f4fb; font-weight:700; box-shadow:inset 0 1px 0 rgba(255,255,255,.7) }
+      .pill.dot { width:8px; height:8px; border-radius:50%; background:#5b7cff }
+      .note { font-size:14px; color:#4a5370; background:#f5f7ff; border:1px dashed #ced6ff; padding:12px 14px; border-radius:10px; display:inline-flex; align-items:center; gap:10px }
+      .grid { display:grid; grid-template-columns:1fr; gap:16px; margin-top:22px }
+      .card { border-radius:14px; background:#fff; border:1px solid #eef1f7; padding:16px }
+      .footer { margin-top:32px; font-size:14px; color:#6c7490 }
+      @media (min-width:760px){
+        h1 { font-size:46px }
+        .grid { grid-template-columns:repeat(3,1fr) }
+        .hero { padding:34px }
       }
-      h1 {
-        font-size: 2rem;
-        color: #0f172a;
-      }
-      p {
-        color: #475569;
-      }
+      .btn { display:inline-flex; align-items:center; justify-content:center; padding:12px 16px; border-radius:12px; font-weight:800; text-decoration:none; }
+      .btn-primary { background:var(--brand); color:#fff; box-shadow:0 6px 16px rgba(31,59,255,.25) }
+      .btn-primary:hover { transform:translateY(-1px) }
+      .cta { display:flex; gap:12px; flex-wrap:wrap; margin-top:16px }
     </style>
   </head>
   <body>
-    <h1>🚀 LockHabit Blog</h1>
-    <p>We’re building something incredible. Stay tuned.</p>
+    <div class="wrap">
+      <header>
+        <div class="brand"><span class="badge"></span> LockHabit</div>
+        <nav>
+          <a href="/">Journal Home</a>
+          <a href="https://lockhabit.com">Calculators</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <h1>Understand money. Feel calmer. Act confidently.</h1>
+        <p class="lead">{dek}</p>
+
+        <div class="pills">
+          <span class="pill"><span class="pill dot"></span> All</span>
+          <span class="pill"><span class="pill dot" style="background:#3069ff"></span> Investing</span>
+          <span class="pill"><span class="pill dot" style="background:#2bb673"></span> Saving</span>
+          <span class="pill"><span class="pill dot" style="background:#ef7a57"></span> Debt</span>
+          <span class="pill"><span class="pill dot" style="background:#7b61ff"></span> Credit</span>
+          <span class="pill"><span class="pill dot" style="background:#ffb020"></span> Home</span>
+        </div>
+
+        <div class="note">Search — <strong>Coming soon</strong></div>
+
+        <div class="cta">
+          <a class="btn btn-primary" href="#">Featured stories (soon)</a>
+          <a class="btn" style="background:#f1f4ff;border:1px solid #e2e8ff" href="#">About the Journal</a>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card"><strong>Latest</strong><br/>Publishing pipeline will auto-fill here as posts are added.</div>
+        <div class="card"><strong>Trending topics</strong><br/>Budgeting · Taxes · Credit · Investing</div>
+        <div class="card"><strong>Editor’s picks</strong><br/>Curation area for high dwell time.</div>
+      </section>
+
+      <div class="footer">© {new Date().getFullYear()} LockHabit. Educational content only, not financial advice.</div>
+    </div>
   </body>
 </html>
