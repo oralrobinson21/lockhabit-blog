@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://lockhabit-blog.pages.dev',
+  site: 'https://blog.lockhabit.com', // you can change later
+  output: 'static',
+  integrations: [],
 });
